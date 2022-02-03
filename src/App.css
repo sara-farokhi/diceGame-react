@@ -27,20 +27,20 @@ body {
   flex-direction: column;
   justify-content: space-around;
 }
-.side > .player-0-score,
-.side > .player-1-score {
+.side > .player-1-score,
+.side > .player-2-score {
   transform: translate(0, -120px);
 }
-.player-0-name > span,
-.player-1-name > span {
+.player-1-name > span,
+.player-2-name > span {
   position: relative;
 }
 
 .active {
   background-color: #c1c1c1;
 }
-.active > .player-0-name > span::after,
-.active > .player-1-name > span::after {
+.active > .player-1-name > span::after,
+.active > .player-2-name > span::after {
   content: "";
   width: 10px;
   height: 10px;

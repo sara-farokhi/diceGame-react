@@ -1,9 +1,16 @@
-import React from "react";
+import { ROLE_DICE, CHANGE_PLAYERS } from "../type";
 
 const reducer = (state, action) => {
   switch (action.type) {
-    //   case  harchi:
-    //       return {...state, }
+    case ROLE_DICE:
+      return { ...state, dice: action.payload };
+
+    case CHANGE_PLAYERS:
+      return {
+        ...state,
+        player1Active: !state.player1Active,
+        player2Active: !state.player2Active,
+      };
 
     default:
       return state;
