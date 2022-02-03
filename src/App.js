@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import Playground from "./components/Playground";
+import States from "./context/States";
+import Buttons from "./components/Buttons";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <States>
+      <div className="parent">
+        <Playground
+          player="Player 1"
+          playerNum="player-0-name"
+          playerSore="player-0-score"
+          playerSum="player-0-sum"
+        />
+        <Playground
+          player="Player 2"
+          playerNum="player-1-name"
+          playerSore="player-1-score"
+          playerSum="player-1-sum"
+        />
+
+        <Buttons />
+      </div>
+    </States>
   );
-}
+};
 
 export default App;
