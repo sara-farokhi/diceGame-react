@@ -3,26 +3,28 @@ import Context from "../context/Context";
 import Buttons from "./Buttons";
 
 const Playground = ({ player, playerNum, playerSore, playerSum }) => {
-  const { player1Active, player2Active } = useContext(Context);
+  const { player1Active, player2Active, diceValues } = useContext(Context);
+  const currentSum = diceValues.reduce((prev, elm) => prev + elm, 0);
+  console.log(currentSum);
 
   return (
     <>
-      <div class="parent">
+      <div className="parent">
         <div className={`side ${player1Active && "active"}`}>
-          <div class="player-1-name">
+          <div className="player-1-name">
             <span>player-0</span>
           </div>
-          <div class="player-1-score">58</div>
-          <div class="player-1-sum">10</div>
+          <div className="player-1-score">0</div>
+          <div className="player-1-sum">{player1Active ? currentSum : 0}</div>
         </div>
         <div className={`side ${player2Active && "active"}`}>
-          <div class="player-2-name">
+          <div className="player-2-name">
             <span>player-1</span>
           </div>
-          <div class="player-2-score">58</div>
-          <div class="player-2-sum">10</div>
+          <div className="player-2-score">0</div>
+          <div className="player-2-sum">{player2Active ? currentSum : 0}</div>
         </div>
-        <button class="new">new game</button>
+        <button className="new">new game</button>
         <Buttons />
       </div>
     </>

@@ -2,8 +2,15 @@ import { useContext } from "react";
 import Context from "../context/Context";
 
 const Buttons = () => {
-  let { roleDice, dice, player1Active, player2Active, changePlayers } =
-    useContext(Context);
+  let {
+    roleDice,
+    dice,
+    // player1Active,
+    // player2Active,
+    changePlayers,
+    diceValues,
+  } = useContext(Context);
+
   const roleDiceHandler = () => {
     roleDice();
   };
