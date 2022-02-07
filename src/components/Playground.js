@@ -2,9 +2,14 @@ import { useContext } from "react";
 import Context from "../context/Context";
 import Buttons from "./Buttons";
 
-const Playground = ({ player, playerNum, playerSore, playerSum }) => {
+const Playground = ({
+  player,
+  playerNum,
+  playerSore,
+  playerSum,
+  currentSum,
+}) => {
   const { player1Active, player2Active, diceValues } = useContext(Context);
-  const currentSum = diceValues.reduce((prev, elm) => prev + elm, 0);
   console.log(currentSum);
 
   return (

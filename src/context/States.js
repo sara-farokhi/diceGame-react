@@ -6,10 +6,8 @@ import { ROLE_DICE, CHANGE_PLAYERS } from "../type";
 const States = ({ children }) => {
   const initialState = {
     dice: null,
-    diceValues: [],
     player1Active: true,
     player2Active: false,
-    player1Currentscore: 0,
   };
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -17,9 +15,8 @@ const States = ({ children }) => {
 
   //     role dice
 
-  const roleDice = (a) => {
+  const roleDice = () => {
     const dice = Math.ceil(Math.random() * 6);
-
     dispatch({ type: ROLE_DICE, payload: dice });
   };
 
@@ -35,7 +32,6 @@ const States = ({ children }) => {
         dice: state.dice,
         player1Active: state.player1Active,
         player2Active: state.player2Active,
-        diceValues: state.diceValues,
         roleDice,
         changePlayers,
       }}

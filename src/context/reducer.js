@@ -3,11 +3,7 @@ import { ROLE_DICE, CHANGE_PLAYERS } from "../type";
 const reducer = (state, action) => {
   switch (action.type) {
     case ROLE_DICE:
-      return {
-        ...state,
-        dice: action.payload,
-        diceValues: [...state.diceValues, action.payload],
-      };
+      return { ...state, dice: action.payload };
 
     case CHANGE_PLAYERS:
       return {
