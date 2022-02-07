@@ -14,6 +14,8 @@ const Buttons = () => {
     addPlayer1Score,
     addPlayer2Score,
     currentSum,
+    player1Score,
+    player2Score,
   } = useContext(Context);
   console.log(currentSum);
 
@@ -26,11 +28,14 @@ const Buttons = () => {
   const holdHandler = () => {
     if (player1Active) {
       addPlayer1Score();
+
       resetCurrentSum();
+
       changePlayers();
     }
     if (player2Active) {
       addPlayer2Score();
+
       resetCurrentSum();
       changePlayers();
     }

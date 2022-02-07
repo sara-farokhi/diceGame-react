@@ -70,6 +70,15 @@ const States = ({ children }) => {
   const addPlayer2Score = () => {
     dispatch({ type: PLAYERII_SCORE });
   };
+
+  //       Alert Winners
+  // if (state.player1Score > 10) {
+  //   alert("player1 is the winner");
+  // }
+  // if (state.player2Score > 10) {
+  //   alert("player2 is the winner");
+  // }
+
   return (
     <Context.Provider
       value={{
@@ -84,11 +93,9 @@ const States = ({ children }) => {
         addCurrentSum,
         resetCurrentSum,
         addPlayer1Score,
-        // resetDice,
         addPlayer2Score,
       }}
     >
-      {/* hi */}
       {children}
     </Context.Provider>
   );

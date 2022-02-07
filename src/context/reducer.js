@@ -23,7 +23,6 @@ const reducer = (state, action) => {
         ...state,
         currentSum: state.dice === 3 ? 0 : state.currentSum + state.dice,
       };
-
     case RESET_CURRENTSUM:
       return {
         ...state,
