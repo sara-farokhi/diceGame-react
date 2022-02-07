@@ -78,6 +78,7 @@ const States = ({ children }) => {
         addPlayer2Score,
       }}
     >
+      {/* hi */}
       {children}
     </Context.Provider>
   );
