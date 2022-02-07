@@ -8,7 +8,6 @@ const Buttons = () => {
     // player1Active,
     // player2Active,
     changePlayers,
-    diceValues,
   } = useContext(Context);
 
   const roleDiceHandler = () => {
