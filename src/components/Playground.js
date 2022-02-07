@@ -7,9 +7,9 @@ const Playground = ({
   playerNum,
   playerSore,
   playerSum,
-  currentSum,
+  // currentSum,
 }) => {
-  const { player1Active, player2Active } = useContext(Context);
+  const { player1Active, player2Active, currentSum } = useContext(Context);
   console.log(currentSum);
 
   return (
