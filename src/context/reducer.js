@@ -1,4 +1,9 @@
-import { ROLE_DICE, CHANGE_PLAYERS, CURRENT_SUM } from "../type";
+import {
+  ROLE_DICE,
+  CHANGE_PLAYERS,
+  CURRENT_SUM,
+  RESET_CURRENTSUM,
+} from "../type";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -15,6 +20,13 @@ const reducer = (state, action) => {
       return {
         ...state,
         currentSum: state.currentSum + state.dice,
+      };
+
+    case RESET_CURRENTSUM:
+      return {
+        ...state,
+        currentSum: 0,
+        dice: null,
       };
 
     default:

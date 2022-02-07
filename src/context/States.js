@@ -1,7 +1,12 @@
 import { useReducer } from "react";
 import Context from "./Context";
 import reducer from "./reducer";
-import { ROLE_DICE, CHANGE_PLAYERS, CURRENT_SUM } from "../type";
+import {
+  ROLE_DICE,
+  CHANGE_PLAYERS,
+  CURRENT_SUM,
+  RESET_CURRENTSUM,
+} from "../type";
 
 const States = ({ children }) => {
   const initialState = {
@@ -30,8 +35,16 @@ const States = ({ children }) => {
 
   const current = state.currentSum + state.dice;
 
+  //    add current sum
+
   const addCurrentSum = () => {
     dispatch({ type: CURRENT_SUM, payload: current });
+  };
+
+  //      reset current sum
+
+  const resetCurrentSum = () => {
+    dispatch({ type: RESET_CURRENTSUM });
   };
 
   return (
@@ -44,6 +57,7 @@ const States = ({ children }) => {
         roleDice,
         changePlayers,
         addCurrentSum,
+        resetCurrentSum,
       }}
     >
       {children}
