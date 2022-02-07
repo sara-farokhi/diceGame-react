@@ -3,6 +3,8 @@ import {
   CHANGE_PLAYERS,
   CURRENT_SUM,
   RESET_CURRENTSUM,
+  PLAYERII_SCORE,
+  PLAYERI_SCORE,
 } from "../type";
 
 const reducer = (state, action) => {
@@ -26,6 +28,18 @@ const reducer = (state, action) => {
       return {
         ...state,
         currentSum: 0,
+        dice: null,
+      };
+    case PLAYERI_SCORE:
+      return {
+        ...state,
+        player1Score: state.player1Score + state.currentSum,
+        dice: null,
+      };
+    case PLAYERII_SCORE:
+      return {
+        ...state,
+        player2Score: state.player2Score + state.currentSum,
         dice: null,
       };
 

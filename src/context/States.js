@@ -6,6 +6,8 @@ import {
   CHANGE_PLAYERS,
   CURRENT_SUM,
   RESET_CURRENTSUM,
+  PLAYERI_SCORE,
+  PLAYERII_SCORE,
 } from "../type";
 
 const States = ({ children }) => {
@@ -14,6 +16,8 @@ const States = ({ children }) => {
     player1Active: true,
     player2Active: false,
     currentSum: 0,
+    player1Score: 0,
+    player2Score: 0,
   };
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -46,7 +50,17 @@ const States = ({ children }) => {
   const resetCurrentSum = () => {
     dispatch({ type: RESET_CURRENTSUM });
   };
+  //      player1 score
 
+  const addPlayer1Score = () => {
+    dispatch({ type: PLAYERI_SCORE });
+  };
+
+  //      player2 score
+
+  const addPlayer2Score = () => {
+    dispatch({ type: PLAYERII_SCORE });
+  };
   return (
     <Context.Provider
       value={{
@@ -54,10 +68,14 @@ const States = ({ children }) => {
         player1Active: state.player1Active,
         player2Active: state.player2Active,
         currentSum: state.currentSum,
+        player1Score: state.player1Score,
+        player2Score: state.player2Score,
         roleDice,
         changePlayers,
         addCurrentSum,
         resetCurrentSum,
+        addPlayer1Score,
+        addPlayer2Score,
       }}
     >
       {children}
