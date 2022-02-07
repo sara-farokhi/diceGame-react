@@ -8,15 +8,19 @@ const Buttons = () => {
     addCurrentSum,
     changePlayers,
     resetCurrentSum,
+    // resetCurrent
     player1Active,
     player2Active,
     addPlayer1Score,
     addPlayer2Score,
+    currentSum,
   } = useContext(Context);
+  console.log(currentSum);
 
   const roleDiceHandler = () => {
     roleDice();
     addCurrentSum();
+    // console.log(currentSum + dice);
   };
 
   const holdHandler = () => {

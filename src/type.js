@@ -6,3 +6,4 @@ export const CURRENT_SUM = "CURRENT_SUM";
 export const RESET_CURRENTSUM = "RESET_CURRENTSUM";
 export const PLAYERI_SCORE = "PLAYERI_SCORE";
 export const PLAYERII_SCORE = "PLAYERII_SCORE";
+export const RESET_DICE = "RESET_DICE";

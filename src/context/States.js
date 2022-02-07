@@ -8,6 +8,7 @@ import {
   RESET_CURRENTSUM,
   PLAYERI_SCORE,
   PLAYERII_SCORE,
+  // RESET_DICE,
 } from "../type";
 
 const States = ({ children }) => {
@@ -27,9 +28,17 @@ const States = ({ children }) => {
 
   const roleDice = () => {
     const dice = Math.ceil(Math.random() * 6);
+    if (dice === 3) {
+      alert("3 IS THE DEAt NUMBER");
+      resetCurrentSum();
+      changePlayers();
+    }
     dispatch({ type: ROLE_DICE, payload: dice });
-    console.log();
   };
+
+  // const resetDice = () => {
+  //   dispatch({ type: RESET_DICE });
+  // };
 
   //    change player1
 
@@ -75,6 +84,7 @@ const States = ({ children }) => {
         addCurrentSum,
         resetCurrentSum,
         addPlayer1Score,
+        // resetDice,
         addPlayer2Score,
       }}
     >

@@ -10,7 +10,6 @@ const Playground = () => {
     player1Score,
     player2Score,
   } = useContext(Context);
-  console.log(currentSum);
 
   return (
     <>
