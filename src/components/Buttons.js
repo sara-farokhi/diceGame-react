@@ -43,7 +43,6 @@ const Buttons = () => {
 
   return (
     <>
-    <p> this is to test fetch</p>
       <button className="new">new game</button>
       <button className="role" onClick={roleDiceHandler}>
         role dice
