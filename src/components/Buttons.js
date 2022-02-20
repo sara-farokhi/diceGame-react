@@ -13,16 +13,11 @@ const Buttons = () => {
     player2Active,
     addPlayer1Score,
     addPlayer2Score,
-    currentSum,
-    player1Score,
-    player2Score,
   } = useContext(Context);
-  console.log(currentSum);
 
   const roleDiceHandler = () => {
     roleDice();
     addCurrentSum();
-    // console.log(currentSum + dice);
   };
 
   const holdHandler = () => {
@@ -43,7 +38,6 @@ const Buttons = () => {
 
   return (
     <>
-      <button className="new">new game</button>
       <button className="role" onClick={roleDiceHandler}>
         role dice
       </button>

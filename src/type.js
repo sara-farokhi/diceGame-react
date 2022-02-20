@@ -7,3 +7,6 @@ export const RESET_CURRENTSUM = "RESET_CURRENTSUM";
 export const PLAYERI_SCORE = "PLAYERI_SCORE";
 export const PLAYERII_SCORE = "PLAYERII_SCORE";
 export const RESET_DICE = "RESET_DICE";
+export const PLAYER_1_START = "PLAYER_1_START";
+export const PLAYER_2_START = "PLAYER_2_START";
+export const RESET_GAME = "RESET_GAME";

@@ -8,7 +8,9 @@ import {
   RESET_CURRENTSUM,
   PLAYERI_SCORE,
   PLAYERII_SCORE,
-  // RESET_DICE,
+  PLAYER_1_START,
+  PLAYER_2_START,
+  RESET_GAME,
 } from "../type";
 
 const States = ({ children }) => {
@@ -29,16 +31,12 @@ const States = ({ children }) => {
   const roleDice = () => {
     const dice = Math.ceil(Math.random() * 6);
     if (dice === 3) {
-      alert("3 IS THE DEAt NUMBER");
+      alert("3 IS THE DEAD NUMBER");
       resetCurrentSum();
       changePlayers();
     }
     dispatch({ type: ROLE_DICE, payload: dice });
   };
-
-  // const resetDice = () => {
-  //   dispatch({ type: RESET_DICE });
-  // };
 
   //    change player1
 
@@ -71,13 +69,15 @@ const States = ({ children }) => {
     dispatch({ type: PLAYERII_SCORE });
   };
 
-  //       Alert Winners
-  // if (state.player1Score > 10) {
-  //   alert("player1 is the winner");
-  // }
-  // if (state.player2Score > 10) {
-  //   alert("player2 is the winner");
-  // }
+  // reset game
+  const resetGame = () => {
+    if (state.player1Score > 10) {
+      dispatch({ type: PLAYER_1_START });
+    } else {
+      dispatch({ type: PLAYER_2_START });
+    }
+    dispatch({ type: RESET_GAME });
+  };
 
   return (
     <Context.Provider
@@ -94,6 +94,7 @@ const States = ({ children }) => {
         resetCurrentSum,
         addPlayer1Score,
         addPlayer2Score,
+        resetGame,
       }}
     >
       {children}
